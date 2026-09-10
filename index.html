@@ -4,77 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Politique de confidentialité — La Baguette Française</title>
-
-    <meta name="description" content="Politique de confidentialité du bot Discord La Baguette Française.">
+    <title>La Baguette Française</title>
 
     <style>
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at center, #250000 0%, #0a0000 45%, #000000 100%);
+
             font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f8;
-            color: #222;
-            line-height: 1.7;
+            overflow: hidden;
         }
 
-        header {
-            background: #5865F2;
-            color: white;
-            padding: 45px 20px;
+        /* Effet rouge en arrière-plan */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+
+            background: #ff0000;
+            opacity: 0.08;
+
+            border-radius: 50%;
+            filter: blur(120px);
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container {
+            position: relative;
             text-align: center;
+            z-index: 1;
         }
 
-        header h1 {
-            margin: 0 0 10px;
-            font-size: 32px;
+        /* Image */
+        .image-container {
+            width: 190px;
+            height: 190px;
+
+            margin: 0 auto 30px;
+
+            border-radius: 50%;
+            overflow: hidden;
+
+            border: 3px solid #ff0000;
+
+            box-shadow:
+                0 0 15px #ff0000,
+                0 0 40px rgba(255, 0, 0, 0.5),
+                inset 0 0 20px #000000;
+
+            background: #050505;
         }
 
-        header p {
-            margin: 0;
-            opacity: 0.9;
+        .image-container img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            /* Effet noir et rouge */
+            filter:
+                grayscale(100%)
+                contrast(1.3)
+                brightness(0.7)
+                sepia(100%)
+                hue-rotate(315deg)
+                saturate(500%);
         }
 
-        main {
-            max-width: 850px;
-            margin: 35px auto;
-            padding: 0 20px;
+        /* Nom du serveur */
+        h1 {
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 10px rgba(255, 0, 0, 0.7),
+                0 0 30px rgba(255, 0, 0, 0.4);
         }
 
-        section {
-            background: white;
-            padding: 25px 30px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        /* Une partie du texte en rouge */
+        h1 span {
+            color: #ff0000;
+
+            text-shadow:
+                0 0 10px #ff0000,
+                0 0 25px rgba(255, 0, 0, 0.7);
         }
 
-        h2 {
-            color: #5865F2;
-            margin-top: 0;
+        /* Ligne rouge */
+        .line {
+            width: 180px;
+            height: 3px;
+
+            background: #ff0000;
+
+            margin: 22px auto 0;
+
+            box-shadow:
+                0 0 10px #ff0000,
+                0 0 25px rgba(255, 0, 0, 0.6);
+
+            border-radius: 10px;
         }
 
-        ul {
-            padding-left: 25px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: #666;
-            font-size: 14px;
-        }
-
+        /* Téléphone */
         @media (max-width: 600px) {
-            header h1 {
-                font-size: 25px;
+
+            .image-container {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 25px;
             }
 
-            section {
-                padding: 20px;
+            h1 {
+                font-size: 30px;
+                letter-spacing: 1px;
+            }
+
+            .line {
+                width: 120px;
             }
         }
     </style>
@@ -82,124 +149,24 @@
 
 <body>
 
-<header>
-    <h1>La Baguette Française</h1>
-    <p>Politique de confidentialité du bot Discord</p>
-</header>
+    <div class="container">
 
-<main>
+        <!--
+            Mets ton image dans le même dossier que index.html
+            et appelle-la : image.png
+        -->
 
-    <section>
-        <h2>1. Introduction</h2>
-        <p>
-            Cette politique de confidentialité explique quelles données peuvent
-            être utilisées par le bot Discord « La Baguette Française » et
-            dans quel but.
-        </p>
-    </section>
+        <div class="image-container">
+          <img src="https://img.magnific.com/vecteurs-libre/fond-noir-maille-low-poly-rougeoyante-rougeoyante_1017-20215.jpg?semt=ais_hybrid&w=740&q=80" alt="La Baguette Française">
+        </div>
 
-    <section>
-        <h2>2. Données utilisées</h2>
-        <p>
-            Le bot peut utiliser certaines informations nécessaires à son
-            fonctionnement sur Discord, notamment :
-        </p>
+        <h1>
+            La Baguette <span>Française</span>
+        </h1>
 
-        <ul>
-            <li>L'identifiant Discord (ID) des utilisateurs.</li>
-            <li>L'identifiant des serveurs Discord.</li>
-            <li>Les informations nécessaires aux commandes du bot.</li>
-            <li>Les paramètres nécessaires aux fonctionnalités activées sur un serveur.</li>
-            <li>Les messages uniquement lorsqu'ils sont nécessaires au fonctionnement d'une commande ou d'une fonctionnalité.</li>
-        </ul>
-    </section>
+        <div class="line"></div>
 
-    <section>
-        <h2>3. Utilisation des données</h2>
-        <p>
-            Les données utilisées par le bot servent uniquement à permettre
-            son fonctionnement et à fournir ses fonctionnalités.
-        </p>
-
-        <ul>
-            <li>Exécuter les commandes du bot.</li>
-            <li>Gérer les fonctionnalités du serveur.</li>
-            <li>Conserver certains paramètres du serveur lorsque cela est nécessaire.</li>
-            <li>Améliorer la stabilité et la sécurité du bot.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>4. Partage des données</h2>
-        <p>
-            Les données utilisées par « La Baguette Française » ne sont pas
-            vendues à des tiers.
-        </p>
-
-        <p>
-            Elles ne sont pas volontairement partagées avec des tiers,
-            sauf lorsque cela est nécessaire au fonctionnement du service
-            ou lorsque la loi l'exige.
-        </p>
-    </section>
-
-    <section>
-        <h2>5. Conservation des données</h2>
-        <p>
-            Les données sont conservées uniquement pendant la durée nécessaire
-            au fonctionnement des fonctionnalités concernées.
-        </p>
-
-        <p>
-            Les données qui ne sont plus nécessaires peuvent être supprimées.
-        </p>
-    </section>
-
-    <section>
-        <h2>6. Sécurité</h2>
-        <p>
-            Des mesures raisonnables sont mises en place afin de limiter les
-            risques d'accès, de modification ou de divulgation non autorisés
-            des données utilisées par le bot.
-        </p>
-    </section>
-
-    <section>
-        <h2>7. Vos droits</h2>
-        <p>
-            Vous pouvez demander des informations concernant les données
-            associées à votre utilisation du bot et demander leur suppression
-            lorsque cela est applicable.
-        </p>
-    </section>
-
-    <section>
-        <h2>8. Contact</h2>
-        <p>
-            Pour toute question concernant cette politique de confidentialité
-            ou les données utilisées par le bot, vous pouvez contacter le
-            propriétaire ou l'administrateur du bot via le serveur Discord
-            « La Baguette Française ».
-        </p>
-    </section>
-
-    <section>
-        <h2>9. Modification de cette politique</h2>
-        <p>
-            Cette politique de confidentialité peut être modifiée lorsque
-            les fonctionnalités du bot évoluent ou lorsque cela est nécessaire.
-        </p>
-
-        <p>
-            <strong>Dernière mise à jour : 10 septembre 2026</strong>
-        </p>
-    </section>
-
-</main>
-
-<footer>
-    © 2026 La Baguette Française — Politique de confidentialité
-</footer>
+    </div>
 
 </body>
 </html>
